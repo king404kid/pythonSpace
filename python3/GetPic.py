@@ -6,7 +6,7 @@ import os
 def getHtml(url):
     page = urllib.request.urlopen(url)
     html = page.read()
-    codec = page.info().get_param('charset')
+    codec = page.info().get_param('charset')   # py2的写法是getparam
     # print(codec)
     html = html.decode(codec)
     return html
